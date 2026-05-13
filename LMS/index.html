@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Management System</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f4f7fb;
+      color:#222;
+    }
+
+    /* HEADER */
+
+    header{
+      background:linear-gradient(to right,#0d47a1,#d32f2f);
+      color:white;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#ffdcdc;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      height:350px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero-content h1{
+      font-size:50px;
+      margin-bottom:15px;
+    }
+
+    .hero-content p{
+      font-size:20px;
+    }
+
+    /* PORTALS */
+
+    .portal-section{
+      padding:40px;
+    }
+
+    .portal-title{
+      text-align:center;
+      margin-bottom:30px;
+      color:#0d47a1;
+    }
+
+    .portals{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .portal-card{
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      text-align:center;
+      transition:0.3s;
+      border-top:5px solid #d32f2f;
+    }
+
+    .portal-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .portal-card h2{
+      color:#0d47a1;
+      margin-bottom:15px;
+    }
+
+    /* BOOK SECTION */
+
+    .books-section{
+      padding:40px;
+    }
+
+    .books-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .books-header h2{
+      color:#d32f2f;
+    }
+
+    .book-form{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .book-form input{
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      width:200px;
+    }
+
+    .book-form button{
+      padding:10px 15px;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .add-btn{
+      background:#0d47a1;
+      color:white;
+    }
+
+    .add-btn:hover{
+      background:#08306b;
+    }
+
+    .books-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .book-card{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      position:relative;
+    }
+
+    .book-card h3{
+      color:#0d47a1;
+      margin-bottom:10px;
+    }
+
+    .book-card p{
+      margin-bottom:10px;
+    }
+
+    .delete-btn{
+      background:#d32f2f;
+      color:white;
+      border:none;
+      padding:8px 12px;
+      border-radius:5px;
+      cursor:pointer;
+    }
+
+    .delete-btn:hover{
+      background:#9a0007;
+    }
+
+    footer{
+      background:#0d47a1;
+      color:white;
+      text-align:center;
+      padding:15px;
+      margin-top:30px;
+    }
+
+    @media(max-width:768px){
+      .hero-content h1{
+        font-size:35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="logo">College Library</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Books</a>
+      <a href="#">Employee</a>
+      <a href="#">Admin</a>
+      <a href="#">User</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Library Management System</h1>
+      <p>Manage, Explore and Access College Books Easily</p>
+    </div>
+  </section>
+
+  <!-- PORTALS -->
+
+  <section class="portal-section">
+    <h1 class="portal-title">Our Portals</h1>
+
+    <div class="portals">
+
+      <div class="portal-card">
+        <h2>User Portal</h2>
+        <p>Students can search and view available books.</p>
+      </div>
+
+      <div class="portal-card">
+        <h2>Employee Portal</h2>
+        <p>Employees can add, update and delete books.</p>
+      </div>
+
+      <div class="portal-card">
+        <h2>Admin Portal</h2>
+        <p>Admin manages complete library activities.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOK SECTION -->
+
+  <section class="books-section">
+
+    <div class="books-header">
+
+      <h2>Available Books</h2>
+
+      <div class="book-form">
+        <input type="text" id="bookName" placeholder="Book Name">
+        <input type="text" id="authorName" placeholder="Author Name">
+
+        <button class="add-btn" onclick="addBook()">
+          Add Book
+        </button>
+      </div>
+
+    </div>
+
+    <div class="books-grid" id="booksGrid">
+
+      <div class="book-card">
+        <h3>Data Structures</h3>
+        <p><strong>Author:</strong> Mark Allen</p>
+        <button class="delete-btn" onclick="deleteBook(this)">
+          Delete
+        </button>
+      </div>
+
+      <div class="book-card">
+        <h3>Operating Systems</h3>
+        <p><strong>Author:</strong> Galvin</p>
+        <button class="delete-btn" onclick="deleteBook(this)">
+          Delete
+        </button>
+      </div>
+
+      <div class="book-card">
+        <h3>Python Programming</h3>
+        <p><strong>Author:</strong> Guido Rossum</p>
+        <button class="delete-btn" onclick="deleteBook(this)">
+          Delete
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>© 2026 College Library Management System</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function addBook(){
+
+      let bookName = document.getElementById("bookName").value;
+      let authorName = document.getElementById("authorName").value;
+
+      if(bookName === "" || authorName === ""){
+        alert("Please enter book and author name");
+        return;
+      }
+
+      let booksGrid = document.getElementById("booksGrid");
+
+      let bookCard = document.createElement("div");
+      bookCard.classList.add("book-card");
+
+      bookCard.innerHTML = `
+        <h3>${bookName}</h3>
+        <p><strong>Author:</strong> ${authorName}</p>
+        <button class="delete-btn" onclick="deleteBook(this)">
+          Delete
+        </button>
+      `;
+
+      booksGrid.appendChild(bookCard);
+
+      document.getElementById("bookName").value = "";
+      document.getElementById("authorName").value = "";
+    }
+
+    function deleteBook(button){
+      button.parentElement.remove();
+    }
+
+  </script>
+
+</body>
+</html>
